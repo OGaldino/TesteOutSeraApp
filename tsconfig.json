@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    // ... outras opções
+    "types": [
+      "node",
+      "webdriverio/globals", // Mantemos para 'browser', 'driver' e outros
+      "expect-webdriverio"
+    ]
+  },
+  "include": [
+    "config/**/*.ts",
+    "pageobjects/**/*.ts",
+    "specs/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
