@@ -1,21 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "commonjs",
-    // ... outras opções
+    "module": "CommonJS",
+    "target": "ES2020",
+    "esModuleInterop": true,
     "types": [
       "node",
-      "webdriverio/globals", // Mantemos para 'browser', 'driver' e outros
-      "expect-webdriverio"
-    ]
+      "@wdio/globals/types",
+      "@wdio/mocha-framework",
+      "@wdio/appium-service" // <--- ADICIONE ESTA LINHA AQUI
+    ],
+    "strict": true,
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "rootDir": "./"
   },
   "include": [
     "config/**/*.ts",
-    "pageobjects/**/*.ts",
-    "specs/**/*.ts"
+    "pages/**/*.ts",
+    "test/**/*.ts",
+    "utils/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ]
 }
