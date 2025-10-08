@@ -1,24 +1,36 @@
 {
-  "name": "mobile-appium-tests",
+  "name": "twp-mobile-appium-tests",
   "version": "1.0.0",
-  "description": "Appium tests with WebdriverIO and TypeScript",
+  "description": "TWP Mobile automated tests using Appium and Robot Framework",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run ./config/wdio.conf.ts",
-    "report:generate": "allure generate reports/allure-results --clean -o reports/allure-report",
-    "report:open": "allure open reports/allure-report"
+    "start-appium": "appium",
+    "test": "robot -d logs tests/",
+    "test-buttons": "robot -d logs tests/buttons.robot",
+    "test-short": "robot -d logs -i short tests/",
+    "test-long": "robot -d logs -i long tests/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "appium",
+    "robot-framework",
+    "mobile-testing",
+    "android",
+    "automation"
+  ],
+  "author": "OzeasGaldino-br",
+  "license": "MIT",
+  "dependencies": {
+    "appium": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OGaldino/TesteOutSeraApp.git"
+  },
   "devDependencies": {
-    "@wdio/allure-reporter": "^8.38.0",
-    "@wdio/appium-service": "^8.38.0",
-    "@wdio/cli": "^8.38.0",
-    "@wdio/mocha-framework": "^8.38.0",
-    "@wdio/spec-reporter": "^8.38.0",
-    "allure-commandline": "^2.29.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "appium-uiautomator2-driver": "^5.0.4"
   }
 }
